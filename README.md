@@ -1,1 +1,5 @@
-# WYZ_Web_Final_2020
+# Web_Final_Project
+2020 Web Final Project WeiYingZhou
+
+# Server
+Django 3.0.6 + sqlite3

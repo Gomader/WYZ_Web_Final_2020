@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>SKKU FLEA MARKET</title>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		{% block css %}{% endblock %}
+	</head>
+	<body>
+		<div id="topbar">
+			<a id="logo" href="{% url 'flea:homepage' %}">SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</a>
+			{% if request.session.id != NULL %}
+			<a href='/{{request.session.usertype}}/' style='margin-left:40%;margin-right:10px;'>{{request.session.username}}</a>
+			<button onclick='signout()'>Sign Out</button>
+			{% endif %}
+		</div>
+		{% block inner %}{% endblock %}
+		<div id="footer">
+			Copyright&nbsp;&copy;&nbsp;2020&nbsp;&hearts;&nbsp;by&nbsp;WYZ
+		</div>
+		<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+		{% block script %}{% endblock %}
+	</body>
+</html>
